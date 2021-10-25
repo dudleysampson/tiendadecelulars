@@ -33,7 +33,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -94,8 +103,10 @@
     <Compile Include="FormVentas.Designer.cs">
       <DependentUpon>FormVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductosBL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="_contexto\Clientes.cs" />
     <EmbeddedResource Include="FormClientes.resx">
       <DependentUpon>FormClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +141,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\BL.Seguridad.Producto.datasource" />
     <None Include="Properties\DataSources\BL.Seguridad.ProductosBL.datasource" />
     <None Include="Properties\DataSources\BL.Seguridad.SeguridadBL.datasource" />
@@ -164,9 +176,9 @@
     <None Include="Resources\download.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BL.Seguridad\BL.Seguridad.csproj">
-      <Project>{7CA79E0E-F7B3-4B97-AAAB-D8436A95E106}</Project>
-      <Name>BL.Seguridad</Name>
+    <ProjectReference Include="..\POS.BL\POS.BL.csproj">
+      <Project>{8680e180-167b-4a62-b0db-cdc625f69fcd}</Project>
+      <Name>POS.BL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

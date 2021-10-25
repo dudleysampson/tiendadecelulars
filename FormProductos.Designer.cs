@@ -317,6 +317,7 @@ namespace Win.TiendaCelulares
             this.Controls.Add(this.precioTextBox1);
             this.Controls.Add(this.productoBindingSource1BindingNavigator);
             this.Name = "FormProductos";
+            this.Load += new System.EventHandler(this.FormProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1BindingNavigator)).EndInit();
             this.productoBindingSource1BindingNavigator.ResumeLayout(false);
             this.productoBindingSource1BindingNavigator.PerformLayout();

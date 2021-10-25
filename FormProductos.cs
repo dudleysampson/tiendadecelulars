@@ -1,14 +1,5 @@
-﻿using BL.Seguridad;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
-using static BL.Seguridad.ProductosBL;
 
 namespace Win.TiendaCelulares
 {
@@ -31,17 +22,18 @@ namespace Win.TiendaCelulares
             productoBindingSource1.EndEdit();
             var producto = (Producto)productoBindingSource1.Current;
             var resultado = _productos.GuardarProducto(producto);
+            
 
-            if (resultado.Exitoso == true)
-            {
-                productoBindingSource1.ResetBindings(false);
+//            if (resultado.Exitoso == true)
+  //          {
+    //            productoBindingSource1.ResetBindings(false);
                 
 
-            }
+      //      }
 
-            else
+        //    else
             {
-                MessageBox.Show(resultado.Mensaje);
+                MessageBox.Show("resultado.Mensaje");
             }
 
         }
@@ -76,11 +68,11 @@ namespace Win.TiendaCelulares
 
             var resultado = _productos.EliminarProducto(id);
 
-            if (resultado == true)
-            {
+          //  if (resultado == true)
+            //{
                 productoBindingSource1.ResetBindings(false);
-            }
-            else
+            //}
+            //else
             {
                 MessageBox.Show("Ocurrio un error eliminando el producto");
             }
@@ -96,24 +88,14 @@ namespace Win.TiendaCelulares
         {
 
         }
+
+        private void FormProductos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
+
+    internal class Producto
+    {
     }
-
-        
-
-        
-    
-
-
-    
-
-    
-
-
-
-
-
-
-
-
-
+}
