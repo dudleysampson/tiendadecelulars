@@ -26,7 +26,7 @@ namespace POS.BL
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            Cliente nuevoCliente = new Cliente();
+            Clientes nuevoCliente = new Clientes();
             nuevoCliente.Nombre = textBox1.Text;
 
             //CREATE
@@ -59,7 +59,7 @@ namespace POS.BL
                 string nombre = textBox1.Text;
                 string telefono = textBox2.Text;
 
-                Cliente cliente = _contexto.Clientes.Find(Id);
+                Clientes cliente = _contexto.Clientes.Find(Id);
 
                 if (cliente != null)
                 {
@@ -86,7 +86,7 @@ namespace POS.BL
             {
                 int Id = int.Parse(textBox3.Text);
 
-                Cliente cliente = _contexto.Clientes.Find(Id);
+                Clientes cliente = _contexto.Clientes.Find(Id);
 
                 if (cliente != null)
                 {
