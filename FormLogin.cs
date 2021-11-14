@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using BL.Rentas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,24 +10,26 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Win.TiendaCelulares
+namespace Tienda_de_Celulares
 {
     public partial class FormLogin : Form
     {
+        SeguridadBL _seguridad;
         public FormLogin()
         {
             InitializeComponent();
+
+            _seguridad = new SeguridadBL();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -36,18 +40,19 @@ namespace Win.TiendaCelulares
             usuario = textBox1.Text;
             contrasena = textBox2.Text;
 
-            if (usuario == "admin" && contrasena == "123" || usuario == "invitado" && contrasena == "123")
-            {
-                this.Close();
+            var resultado = _seguridad.Autorizar(usuario, contrasena);
 
+            if (resultado == true)
+            {
+                Close();
             }
             else
             {
-                MessageBox.Show("Usuario o contrasena incorrecta");
+                MessageBox.Show("Usuario o contraseña incorrecta");
             }
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void FormLogin_Load(object sender, EventArgs e)
         {
 
         }

@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Win.TiendaCelulares
+namespace Tienda_de_Celulares
 {
     static class Program
     {
@@ -17,6 +19,14 @@ namespace Win.TiendaCelulares
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FormMenu());
+        }
+
+        public static byte[] imageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, imageIn.RawFormat);
+
+            return ms.ToArray();
         }
     }
 }

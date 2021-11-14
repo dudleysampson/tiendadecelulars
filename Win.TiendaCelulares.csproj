@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{33753EF6-6F3D-444F-91CA-724837EA7786}</ProjectGuid>
+    <ProjectGuid>{8F6AB2B3-EB45-48E2-A5C3-C8C0A10B70C0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Win.TiendaCelulares</RootNamespace>
-    <AssemblyName>Win.TiendaCelulares</AssemblyName>
+    <RootNamespace>Tienda_de_Celulares</RootNamespace>
+    <AssemblyName>Tienda de Celulares</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -55,11 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormClientes.cs">
+    <Compile Include="FormFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormClientes.Designer.cs">
-      <DependentUpon>FormClientes.cs</DependentUpon>
+    <Compile Include="FormFactura.Designer.cs">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FacturaDetallle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FacturaDetallle.Designer.cs">
+      <DependentUpon>FacturaDetallle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -79,36 +91,20 @@
     <Compile Include="FormProductos.Designer.cs">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReportedeclientes.cs">
+    <Compile Include="FormRentas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReportedeclientes.Designer.cs">
-      <DependentUpon>FormReportedeclientes.cs</DependentUpon>
+    <Compile Include="FormRentas.Designer.cs">
+      <DependentUpon>FormRentas.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReportedeproductos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormReportedeproductos.Designer.cs">
-      <DependentUpon>FormReportedeproductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormTransferencias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormTransferencias.Designer.cs">
-      <DependentUpon>FormTransferencias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormVentas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormVentas.Designer.cs">
-      <DependentUpon>FormVentas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ProductosBL.cs" />
+    <Compile Include="ListView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="_contexto\Clientes.cs" />
-    <EmbeddedResource Include="FormClientes.resx">
-      <DependentUpon>FormClientes.cs</DependentUpon>
+    <EmbeddedResource Include="Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFactura.resx">
+      <DependentUpon>FormFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -119,17 +115,8 @@
     <EmbeddedResource Include="FormProductos.resx">
       <DependentUpon>FormProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReportedeclientes.resx">
-      <DependentUpon>FormReportedeclientes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormReportedeproductos.resx">
-      <DependentUpon>FormReportedeproductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormTransferencias.resx">
-      <DependentUpon>FormTransferencias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormVentas.resx">
-      <DependentUpon>FormVentas.cs</DependentUpon>
+    <EmbeddedResource Include="FormRentas.resx">
+      <DependentUpon>FormRentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -142,20 +129,16 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\BL.Seguridad.Producto.datasource" />
-    <None Include="Properties\DataSources\BL.Seguridad.ProductosBL.datasource" />
-    <None Include="Properties\DataSources\BL.Seguridad.SeguridadBL.datasource" />
-    <None Include="Properties\DataSources\FormClientes.datasource" />
-    <None Include="Properties\DataSources\FormLogin.datasource" />
-    <None Include="Properties\DataSources\FormMenu.datasource" />
-    <None Include="Properties\DataSources\FormProductos.datasource" />
-    <None Include="Properties\DataSources\FormReportedeclientes.datasource" />
-    <None Include="Properties\DataSources\FormReportedeproductos.datasource" />
-    <None Include="Properties\DataSources\FormTransferencias.datasource" />
-    <None Include="Properties\DataSources\FormVentas.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
-    <None Include="Properties\DataSources\Win.TiendaCelulares.Properties.Resources.datasource" />
-    <None Include="Properties\DataSources\Win.TiendaCelulares.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Categoria.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.CategoriasBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Contexto.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.DatosdeInicio.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Producto.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.ProductosBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Resultado.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.Tipo.datasource" />
+    <None Include="Properties\DataSources\BL.Rentas.TiposBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,15 +153,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\download.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\download.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\POS.BL\POS.BL.csproj">
-      <Project>{8680e180-167b-4a62-b0db-cdc625f69fcd}</Project>
-      <Name>POS.BL</Name>
+    <ProjectReference Include="..\Bl.Rentas\BL.Rentas.csproj">
+      <Project>{929a68b0-55a9-44ae-a4f0-6a108d65fa8e}</Project>
+      <Name>BL.Rentas</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

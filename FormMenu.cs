@@ -1,4 +1,4 @@
-﻿using POS.BL;
+﻿using Bl.Rentas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,23 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Win.TiendaCelulares
+namespace Tienda_de_Celulares
 {
     public partial class FormMenu : Form
     {
         public FormMenu()
         {
             InitializeComponent();
-        }
-
-        private void transaccionesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,52 +32,34 @@ namespace Win.TiendaCelulares
         private void productosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var formProductos = new FormProductos();
-            formProductos.MdiParent = this;
+            formProductos.MdiParent = this; 
             formProductos.Show();
+        }
 
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formClientes = new Clientes();
+            formClientes.MdiParent = this;
+            formClientes.Show();
+        }
+
+        private void rentarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var formRentas = new FormRentas();
+            formRentas.MdiParent = this;
+            formRentas.Show();
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
             Login();
-
         }
 
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var formClientes = new FormClientes();
-            formClientes.MdiParent = this;
-            formClientes.Show();
-                   
-        }
-
-        private void ventasToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            var formVentas = new FormVentas();
-            formVentas.MdiParent = this;
-            formVentas.Show();
-        }
-
-        private void transeferenciasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formTransferencias = new FormTransferencias();
-            formTransferencias.MdiParent = this;
-            formTransferencias.Show();
-        }
-
-        private void reporteDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formReportedeproductos = new FormReportedeproductos();
-            formReportedeproductos.MdiParent = this;
-            formReportedeproductos.Show();
-
-        }
-
-        private void reporteDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var formReportedeclientes = new FormReportedeclientes();
-            formReportedeclientes.MdiParent = this;
-            formReportedeclientes.Show();
+            var formFactura = new FormFactura();
+            formFactura.MdiParent = this;
+            formFactura.Show();
         }
     }
 }
